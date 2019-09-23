@@ -30,19 +30,20 @@
               <el-col :span="12">
                 <el-menu
                   :default-active="$router.path"
+                  router
                   class="el-menu-vertical-demo"
                   @open="handleOpen"
                   @close="handleClose"
-                  background-color="#eeeeee">
+                  background-color="#B3C0D1">
                   <el-submenu index="1">
                     <template slot="title">
                       <i class="el-icon-s-tools"></i>
                       <span>系统管理</span>
                     </template>
                     <el-menu-item-group>
-                      <el-menu-item index="/"><i class="el-icon-user-solid"></i>员工管理</el-menu-item>
-                      <el-menu-item index="1-2"><i class="el-icon-star-off"></i>角色管理</el-menu-item>
-                      <el-menu-item index="1-3"><i class="el-icon-star-on"></i>资源管理</el-menu-item>
+                      <el-menu-item index="/home/employee"><i class="el-icon-user-solid"></i>员工管理</el-menu-item>
+                      <el-menu-item index="/home/role"><i class="el-icon-star-off"></i>角色管理</el-menu-item>
+                      <el-menu-item index="/home/resource"><i class="el-icon-star-on"></i>资源管理</el-menu-item>
                     </el-menu-item-group>
                   </el-submenu>
                 </el-menu>
@@ -82,7 +83,7 @@
     margin: 0px;
   }
   .el-aside {
-    background-color: #eeeeee;
+    background-color: #B3C0D1;
     color: #333;
     /*text-align: center;*/
     /*line-height: 200px;*/
@@ -90,8 +91,8 @@
   .el-main {
     background-color: #E9EEF3;
     color: #333;
-    text-align: center;
-    line-height: 160px;
+    /*text-align: center;*/
+    /*line-height: 160px;*/
     padding: 0 0;
   }
   body > .el-container {
