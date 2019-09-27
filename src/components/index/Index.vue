@@ -8,7 +8,8 @@
 </template>
 
 <script>
-    export default {
+
+  export default {
       methods:{
         toLogin(){
           this.$router.replace('/login')

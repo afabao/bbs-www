@@ -10,13 +10,17 @@
         </el-form-item>
         <el-form-item align="center">
           <el-button style="margin: auto" type="primary" @click="onSubmit">SIGN IN<i class="el-icon-check"></i></el-button>
+          <el-button style="margin: auto" type="primary" @click="onSubmit1">SIGN IN<i class="el-icon-check"></i></el-button>
         </el-form-item>
       </el-form>
     </div>
 </template>
 
 <script>
-    export default {
+  import {apiUserLogin} from "../../js/api";
+  import {apiInfo} from "../../js/api";
+
+  export default {
         name: "Login",
       data(){
           return{
@@ -31,8 +35,26 @@
 
       methods:{
           onSubmit(){
-            this.$router.replace('/home')
-          }
+            apiUserLogin({
+              userLoginName: this.loginForm.loginName,
+              userPlainPassword: this.loginForm.password
+            }).then(res=>{
+              const token = res.data;
+              console.log(res)
+              window.localStorage.setItem("token",token);
+            }).catch(err=>{
+
+            })
+          },
+        onSubmit1(){
+          apiInfo({
+
+          }).then(res=>{
+
+          }).catch(err=>{
+
+          })
+        }
       }
     }
 </script>
